@@ -38,7 +38,6 @@ public class WeatherApp {
 
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         
-        // Verificăm codul de status (foarte important pentru interviu!)
         if (response.statusCode() == 404) throw new Exception("Oraș negăsit");
         
         return response.body();
